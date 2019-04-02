@@ -1,0 +1,49 @@
+{% block footer %}
+    {% load staticfiles %}
+    <nav class="navbar navbar-expand-md navbar-light bg-dark">
+        <div class="container-fluid">
+            <div class="container bottom" id="bottom-menu-id">
+                <a class="navbar-brand header-logo" href="#">
+                    <img src="{% static 'main_app/images/logo1.png' %}" alt="logo">
+                </a>
+
+                <div class="collapse navbar-collapse">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-8 ml-auto bottom-menu">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">О проекте</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Услуги</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Карта сайта</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Гостевая</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Контакты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ml-auto bottom-phone-wrapper">
+                                <p class="lead bottom-phone">+7 (495) 345-76-98</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 ml-auto bottom-links">
+                                <a href="#" class="header-link">Войти</a> |
+                                <a href="#" class="header-link">Регистрация</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
