@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from .local_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -132,6 +133,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'ekstrosens123@mail.ru'
-EMAIL_HOST_PASSWORD = '22332200bel'
+EMAIL_HOST_USER = email['user']
+EMAIL_HOST_PASSWORD = email['password']
 EMAIL_PORT = 587

@@ -1,1 +1,2 @@
-/finance/settings.py
+.gitignore
+/finance/local_settings.py
