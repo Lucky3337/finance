@@ -1,0 +1,155 @@
+{% extends "main_app/base.html" %}
+{% block content %}
+    {% load staticfiles %}
+    <h4 class="caption">Бухучет, налоги, МСФО для новичков и профессионалов!</h4>
+    <img src="{% static 'main_app/images/banner.png' %}" class="caption-image" alt="Responsive image">
+    <h5 class="title">Топ: "Первычные документы, регистры учета"</h5>
+    <table class="table table-bordered content-table">
+        <thead>
+        <tr>
+            <th scope="col">Наименование документа</th>
+            <th scope="col">Документ (Rar)</th>
+            <th scope="col">Инструкция (Rar)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Счет-фактура</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Платежное поручение</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Книга учета доходов и расходов(УСНО)</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Приказ (расположение) о приеме работника на работу</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Акт о приеме-передаче основных средств (форма ОС-1)</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr class="link-to-all">
+            <td colspan="3"><a href="#">Все первичные документы >></a></td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="title">Топ: Бухгалтерская и налоговая отчетность, фонды"</h5>
+    <table class="table table-bordered content-table">
+        <thead>
+        <tr>
+            <th scope="col">Наименование документа</th>
+            <th scope="col">Документ (Rar)</th>
+            <th scope="col">Инструкция (Rar)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Бухгалтерский баланс (форма №1)</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Платежное поручение</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Отчет о прибылях и убытках (форма №2)</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Налоговая декларация по НДС</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Налоговая декларация по налогу на прибыль организаций</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr>
+            <td>Налоговый расчет по налогу на имущество <br> организаций</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+            <td><a class="download-link" href="#">Скачать <img src="{% static 'main_app/images/button_rar.png' %}" alt=""></a> 3,5 мб</td>
+        </tr>
+        <tr class="link-to-all">
+            <td colspan="3">
+                <a href="#">Все налоговые декларации >></a>
+                <a href="#">Все формы бухгалтерской отчетности >></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h5 class="title">Топ: Бухгалтерская и налоговая отчетность, фонды"</h5>
+    <table class="table table-bordered content-table">
+        <thead>
+        <tr>
+            <th scope="col">Дата</th>
+            <th scope="col">Компания</th>
+            <th scope="col">Тема</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="td-align-middle">18.03.2019</td>
+            <td class="td-align-middle"><a href="#">Бухсофт.ру</a></td>
+            <td>
+                Правила подачи отчетности по взоносам изменятся
+                Принимая в штат сотрудников по трудовому
+                договору, любой работодатель, помимо статуса
+                налогового агента, получает и статус страхователя.
+            </td>
+        </tr>
+        <tr>
+            <td class="td-align-middle">18.03.2019</td>
+            <td class="td-align-middle"><a href="#">Бухсофт.ру</a></td>
+            <td>
+                Правила подачи отчетности по взоносам изменятся
+                Принимая в штат сотрудников по трудовому
+                договору, любой работодатель, помимо статуса
+                налогового агента, получает и статус страхователя.
+            </td>
+        </tr>
+        <tr>
+            <td class="td-align-middle">18.03.2019</td>
+            <td class="td-align-middle"><a href="#">Бухсофт.ру</a></td>
+            <td>
+                Правила подачи отчетности по взоносам изменятся
+                Принимая в штат сотрудников по трудовому
+                договору, любой работодатель, помимо статуса
+                налогового агента, получает и статус страхователя.
+            </td>
+        </tr>
+        <tr class="link-to-all">
+            <td colspan="3"><a href="#">Все пресс-релизы >></a></td>
+        </tr>
+        </tbody>
+    </table>
+    <h4 class="caption">Кассовые операции:</h4>
+    <ol class="list-links">
+        <li>Правила осуществеления кассовых операций</li>
+        <li>Поступление наличных денег в кассу</li>
+        <li>Хранение наличных денег в кассе</li>
+        <li>Выдача наличных денег из кассы</li>
+        <li>Кассовая книга и отчетность кассира</li>
+        <li>Денежные документы</li>
+        <li>Инвентаризация кассы</li>
+    </ol>
+    <h4 class="caption">Расчеты с применением контрольно-кассовой техники (ККТ):</h4>
+    <ol class="list-links">
+        <li>Приобритение и регистрация ККТ</li>
+        <li>Наличные расчеты с применением ККТ</li>
+        <li>Расчеты с использованием платежных карт</li>
+    </ol>
+{% endblock %}

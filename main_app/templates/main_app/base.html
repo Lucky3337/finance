@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-    <html lang="ru">
-    <!-- Head !-->
-    {% include 'main_app/head.html' %}
-    {% block head %}
-    {% endblock %}
-    <body>
-        <!-- Header !-->
-        {% include 'main_app/header.html' %}
-        {% block header %}
-        {% endblock %}
+<html lang="ru">
+<!-- Head !-->
+{% include 'main_app/head.html' %}
+{% block head %}
+{% endblock %}
+<body>
+<!-- Header !-->
+{% include 'main_app/header.html' %}
+{% block header %}
+{% endblock %}
 
-        <!-- Content !-->
-        {% include 'main_app/body.html' %}
-        {% block body %}
-        {% endblock %}
+<!-- Content !-->
+<div class="container-fluid">
+    <div class="container padding">
+        <div class="row text-center padding">
+            <div class="col-md-2 left-menu">
+            {% include 'main_app/right_menu.html' %}
+            {% block right_menu %}
+            {% endblock %}
+            </div>
 
-        <!-- Footer !-->
-        {% include 'main_app/footer.html' %}
-        {% block footer %}
-        {% endblock %}
-    </body>
+            <div class="col-md-8 text-left middle-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="col-md-2">
+                <div class="row">
+                    {% include 'main_app/news.html' %}
+                    {% block news %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer !-->
+{% include 'main_app/footer.html' %}
+{% block footer %}
+{% endblock %}
+</body>
 </html>

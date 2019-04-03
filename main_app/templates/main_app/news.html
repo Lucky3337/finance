@@ -1,0 +1,33 @@
+{% block news %}
+    {% load staticfiles %}
+    <div class="accordion-fixed-top">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link">
+                                        Новости
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="card-news" class="">
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action submenu">
+                                            <div class="news_date">01.01.2019</div>
+                                            <div class="news_caption">С новым 2019 годом!</div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action submenu">
+                                            <div class="news_date">24.02.2019</div>
+                                            <div class="news_caption">Как выбрать электронную почту?</div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action submenu">
+                                            <div class="news_date">31.03.2019</div>
+                                            <div class="news_caption">ИП без работников: Страховые взносы - 2018</div>
+                                        </a>
+                                        <a href="#" class="link_all_news">ВСЕ НОВОСТИ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}
