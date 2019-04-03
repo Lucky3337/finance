@@ -42,7 +42,7 @@
                                     <a href="{% url 'accounts:logout' %}?next={{request.path}}" class="header-link">Выйти</a>
                                 {% else %}
                                     <a href="{% url 'accounts:login' %}?next={{request.path}}" class="header-link">Войти</a> |
-                                <a href="#" class="header-link">Регистрация</a>
+                                    <a href="#" class="header-link">Регистрация</a>
                                 {% endif %}
                             </div>
                         </div>

@@ -44,7 +44,7 @@ a:hover{
 }
 
 .header-bg{
-    background: #6699b0 url("../../static/index/images/header.jpg") no-repeat 100% 0%;
+    background: #6699b0 url("images/header.jpg") no-repeat 100% 0%;
 }
 
 .form-inline{
