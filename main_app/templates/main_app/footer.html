@@ -39,7 +39,7 @@
                             <div class="col-md-3 ml-auto bottom-links">
                                 {% if user.is_authenticated %}
                                     {{ user.get_username }}
-                                    <a href="{% url 'accounts:logout' %}?next={{request.path}}" class="header-link">Выйти</a>
+                                    <a href="{% url 'accounts:login' %}?next={{request.path}}" class="header-link">Выйти</a>
                                 {% else %}
                                     <a href="{% url 'accounts:login' %}?next={{request.path}}" class="header-link">Войти</a> |
                                     <a href="#" class="header-link">Регистрация</a>

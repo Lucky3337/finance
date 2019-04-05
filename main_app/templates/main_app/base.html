@@ -9,22 +9,46 @@
 {% include 'main_app/header.html' %}
 {% block header %}
 {% endblock %}
-
+<!-- Header end!-->
 <!-- Content !-->
 <div class="container-fluid">
     <div class="container padding">
         <div class="row text-center padding">
+            <!-- Right menu !-->
             <div class="col-md-2 left-menu">
-            {% include 'main_app/right_menu.html' %}
-            {% block right_menu %}
-            {% endblock %}
+                <div class="accordion-fixed-top">
+                    {% if categories %}
+                        {% for category, post_list in categories %}
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link">
+                                            {{ category }}
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="card-content-1" class="">
+                                    <div class="card-body">
+                                        <div class="list-group">
+                                            {% for post in post_list %}
+                                                <a href="#" class="list-group-item list-group-item-action submenu">{{ post }}</a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
-
+            <!-- Right menu end!-->
+            <!-- Content !-->
             <div class="col-md-8 text-left middle-content">
                 {% block content %}
                 {% endblock %}
             </div>
-
+             <!-- Content end!-->
+            <!-- News !-->
             <div class="col-md-2">
                 <div class="row">
                     {% include 'main_app/news.html' %}
@@ -32,14 +56,14 @@
                     {% endblock %}
                 </div>
             </div>
+            <!-- News end!-->
         </div>
     </div>
 </div>
-
-
 <!-- Footer !-->
 {% include 'main_app/footer.html' %}
 {% block footer %}
 {% endblock %}
+<!-- Footer end!-->
 </body>
 </html>
