@@ -1,26 +1,29 @@
 from django.urls import path, include, reverse_lazy
 from django.contrib.auth import views as auth_views
+from django.conf.urls import url
 from django_registration.backends.activation import views as registration_views
+from django_registration.backends.activation.urls import urlpatterns
+urlpatterns
 
-from . import views
 
 app_name = 'accounts'
 
 urlpatterns = [
-    # Registration
-    # path('accounts/', include('django_registration.backends.activation.urls')),
-    path('accounts/activate/complete/', registration_views.ActivationView.as_view(),
+    # Registration.
+    path('accounts/activate/complete/', registration_views.RegistrationView.as_view(
+        template_name='django_registration/activation_complete.html'),
          name='django_registration_activation_complete'),
-    path('accounts/activate/<slug:activation_key>/', registration_views.ActivationView.as_view(),
-         name='django_registration_activate'),
+    url(r'^accounts/activate/(?P<activation_key>[-:\w]+)/$',
+        registration_views.ActivationView.as_view(
+            success_url=reverse_lazy('accounts:django_registration_activation_complete')
+        ), name='django_registration_activate'),
     path('accounts/register/', registration_views.RegistrationView.as_view(
         success_url=reverse_lazy('accounts:django_registration_complete'),
-    ),
-         name='django_registration_register'),
+    ), name='django_registration_register'),
     path('accounts/register/complete', registration_views.RegistrationView.as_view(
+        template_name='django_registration/registration_complete.html',
         success_url=reverse_lazy('accounts:django_registration_complete'),
-    ),
-         name='django_registration_complete'),
+    ), name='django_registration_complete'),
     path('accounts/register/closed/', registration_views.RegistrationView.as_view(),
          name='django_registration_disallowed'),
 

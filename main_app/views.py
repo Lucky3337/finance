@@ -1,9 +1,18 @@
-from django.shortcuts import HttpResponse
-from django.views.generic import TemplateView, DetailView, RedirectView
+from django.views.generic import TemplateView, DetailView, RedirectView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Category, Post, Index
 
 
-class IndexView(LoginRequiredMixin, TemplateView):
-    login_url = 'accounts/login/'
-    template_name = 'main_app/content.html'
-    # redirect_field_name = 'redirect_to'
+class IndexView(LoginRequiredMixin, ListView):
+    template_name = 'main_app/base.html'
+    context_object_name = 'content'
+
+    def get_queryset(self):
+        return Category.objects.all()
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = dict()
+        context['categories'] = Index.get_categories()
+        print(str(context))
+        return context
+

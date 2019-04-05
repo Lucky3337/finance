@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top header-bg">
         <div class="container-fluid" id="header-menu-id">
             <div class="container header">
-                <a class="navbar-brand header-logo" href="#">
+                <a class="navbar-brand header-logo" href="{% url 'main_app:index' %}">
                     <img src="{% static 'main_app/images/logo1.png' %}" alt="logo">
                 </a>
 
@@ -29,7 +29,7 @@
                                     <a href="{% url 'accounts:logout' %}?next={{request.path}}" class="header-link">Выйти</a>
                                 {% else %}
                                     <a href="{% url 'accounts:login' %}?next={{request.path}}" class="header-link">Войти</a> |
-                                <a href="#" class="header-link">Регистрация</a>
+                                    <a href="{% url 'accounts:django_registration_register' %}" class="header-link">Регистрация</a>
                                 {% endif %}
                             </div>
                         </div>
