@@ -16,3 +16,9 @@ class IndexView(LoginRequiredMixin, ListView):
         print(str(context))
         return context
 
+
+class PostView(LoginRequiredMixin, DetailView):
+    template_name = 'main_app/post.html'
+    model = Post
+
+

@@ -14,11 +14,11 @@
 <div class="container-fluid">
     <div class="container padding">
         <div class="row text-center padding">
-            <!-- Right menu !-->
+            <!-- Left menu !-->
             <div class="col-md-2 left-menu">
                 <div class="accordion-fixed-top">
                     {% if categories %}
-                        {% for category, post_list in categories %}
+                        {% for category, posts in categories.items %}
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="mb-0">
@@ -30,8 +30,8 @@
                                 <div id="card-content-1" class="">
                                     <div class="card-body">
                                         <div class="list-group">
-                                            {% for post in post_list %}
-                                                <a href="#" class="list-group-item list-group-item-action submenu">{{ post }}</a>
+                                            {% for post_id, post_name in posts %}
+                                                <a href="{% url 'main_app:post' post_id %}" class="list-group-item list-group-item-action submenu">{{ post_name }}</a>
                                             {% endfor %}
                                         </div>
                                     </div>

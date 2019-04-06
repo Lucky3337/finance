@@ -1,2 +1,4 @@
 .gitignore
 /finance/local_settings.py
+/finance/media/unpload_documents/*
+/finance/media/unpload_images/*

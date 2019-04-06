@@ -24,6 +24,7 @@ class Post(models.Model):
     date_created = models.DateTimeField(verbose_name="Дата создания")
     category_id = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE, null=False)
     user = models.ForeignKey(User, verbose_name='Пользователь/Автор', on_delete=models.CASCADE, null=False)
+    # files = models.ManyToManyRel()
 
     class Meta:
         verbose_name = 'Пост'
@@ -33,6 +34,40 @@ class Post(models.Model):
         return self.title
 
 
+class Document(models.Model):
+    """Class about documents(for examples: .docx, .doc, .xlsx etc.)"""
+
+    name = models.CharField(verbose_name="Наименование файла", max_length=350)
+    date_created = models.DateTimeField(verbose_name="Дата загрузки файла")
+    user = models.OneToOneField(User, verbose_name="Пользователь/Автор", on_delete=models.CASCADE, null=False)
+    post_id = models.ForeignKey(Post, verbose_name="Пост", on_delete=models.CASCADE, null=False)
+    document = models.FileField(upload_to='upload_documents')
+
+    class Meta:
+        verbose_name = 'Документ'
+        verbose_name_plural = 'Документы'
+
+    def __str__(self):
+        return self.name
+
+
+class Image(models.Model):
+    """Class about images"""
+
+    name = models.CharField(verbose_name="Наименование изображения", max_length=350)
+    date_created = models.DateTimeField(verbose_name="Дата загрузки изображения")
+    user = models.OneToOneField(User, verbose_name="Пользователь/Автор", on_delete=models.CASCADE, null=False)
+    post_id = models.ForeignKey(Post, verbose_name="Пост", on_delete=models.CASCADE, null=False)
+    photo = models.ImageField(upload_to='upload_images')
+
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'
+
+    def __str__(self):
+        return self.name
+
+
 class Index:
     """Class about filling main site page (right menu, content, news)"""
 
@@ -40,10 +75,11 @@ class Index:
     @classmethod
     def get_categories(cls):
         categories = Category.objects.all()
-        right_menu = defaultdict(list)
+        right_menu = {}
         for category in categories:
             posts = Post.objects.filter(category_id=category.id)
+            list_dict_posts = []
             for post in posts:
-                right_menu[str(category.name)].append(post.title)
-        right_menu = sorted(right_menu.items())
+                list_dict_posts.append([str(post.id), str(post.title)])
+            right_menu[str(category.name)] = list_dict_posts
         return right_menu
