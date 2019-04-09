@@ -1,9 +1,10 @@
 {% extends 'main_app/base.html' %}
 {% block content %}
+
     <p1>Title</p1>
     <hr>
     <div class="post_title">{{ post.title }}</div>
-    <div class="">{{ post.text }}</div>
+    <div class="">{{ post.text|safe }}</div>
     <div class="">{{ post.created }}</div>
     <hr>
 {% endblock %}

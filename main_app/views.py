@@ -4,7 +4,7 @@ from .models import Category, Post, Index
 
 
 class IndexView(LoginRequiredMixin, ListView):
-    template_name = 'main_app/base.html'
+    template_name = 'main_app/content.html'
     context_object_name = 'content'
 
     def get_queryset(self):

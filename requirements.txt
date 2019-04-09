@@ -1,0 +1,8 @@
+confusable-homoglyphs==3.2.0
+Django==2.2
+django-registration==3.0
+django-summernote==0.8.11.4
+Pillow==6.0.0
+psycopg2-binary==2.7.7
+pytz==2018.9
+sqlparse==0.3.0

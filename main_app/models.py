@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from collections import defaultdict
 
 
 class Category(models.Model):
@@ -24,7 +23,6 @@ class Post(models.Model):
     date_created = models.DateTimeField(verbose_name="Дата создания")
     category_id = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE, null=False)
     user = models.ForeignKey(User, verbose_name='Пользователь/Автор', on_delete=models.CASCADE, null=False)
-    # files = models.ManyToManyRel()
 
     class Meta:
         verbose_name = 'Пост'
